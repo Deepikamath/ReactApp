@@ -1,0 +1,108 @@
+import React, {Component} from 'react';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
+import {JUMBO} from '../shared/jumbotronmsg';
+
+class Header extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.toggleNav = this.toggleNav.bind(this);
+        this.state = {
+          isNavOpen: false,
+          jumbo:JUMBO
+        };
+      }
+
+      toggleNav() {
+        this.setState({
+          isNavOpen: !this.state.isNavOpen
+        });
+      }
+
+    render() {
+        const companyDetails = this.state.jumbo.map((jumbotext) => {
+             
+         //  alert(jumbotext.companyName)
+            // <div> <h1>{jumbotext.companyName}</h1>  
+           
+            //  <h2>{jumbotext.tagName1}</h2></div>
+        }
+        )
+        return(
+            <div>
+                <Navbar dark expand="md">
+                    <div className="container">
+                        <NavbarToggler onClick={this.toggleNav} />
+                        <NavbarBrand className="mr-auto" href="/"><img src='assets/images/Capture.png' height="30" width="41" alt='Hasting Mutual Company' /></NavbarBrand>
+                        <Collapse isOpen={this.state.isNavOpen} navbar>
+                            <Nav navbar>
+                            <NavItem>
+                                <NavLink className="nav-link"  to='/home'><span className="fa fa-home fa-lg"></span> Home</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link" to='/aboutus'><span className="fa fa-info fa-lg"></span>AFC About Us</NavLink>
+                            </NavItem>
+                            <NavItem>
+                            {/* <NavLink className="nav-link" to='/Insurance'><span className="fa fa-info fa-lg"></span> Insurance</NavLink> */}
+                                {/* <NavLink className="nav-link"  to='/menu'><span className="fa fa-list fa-lg"></span> Menu</NavLink> */}
+                            </NavItem>
+                            <NavItem>
+                            
+                                <NavLink className="nav-link"  to='/menu'><span className="fa fa-list fa-lg"></span> Insurance</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link" to='/contact'><span className="fa fa-phone fa-lg"></span> Contact Us</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link" to='/insuranceseeker'><span className="fa fa-quora"></span> Insurance Seeker</NavLink>
+                            </NavItem>
+                            {/* <NavItem>
+                                <NavLink className="nav-link" to='/homeowners'><span className="fa fa-phone fa-lg"></span>Home Owners</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link" to='/Button'><span className="fa fa-phone fa-lg"></span>Next and Previous</NavLink>
+                            </NavItem> */}
+                            {/* <NavItem>
+                                <NavLink className="nav-link" to='/NextPreviousButton'><span className="fa fa-phone fa-lg"></span>NextPreviousbutton</NavLink>
+                            </NavItem> */}
+                               <NavItem>
+                                <NavLink className="nav-link" to='/Policy'><span className="fa fa-database"></span>Policy</NavLink>
+                            </NavItem>
+                           {/* <NavItem>
+                                <NavLink className="nav-link" to='/ReactTable'><span className="fa fa-pencil"></span>Table example</NavLink>
+                            </NavItem>  */}
+                            <NavItem>
+                                <NavLink className="nav-link" to='/PolicyNew'><span className="fa fa-newspaper-o"></span>Policy New</NavLink>
+                            </NavItem>
+                            </Nav>
+                        </Collapse>
+                    </div>
+                </Navbar>
+                
+                {/* <Jumbotron> */}
+                    <div className="container">
+                        <div className="row row-header">
+                            <div className="col-sm-8">
+                           
+                            <p>{companyDetails}</p> 
+                         <h1>Hasting Mutual Insurance Company</h1> 
+                        <p>We are working for your Business</p>
+                        <p>Coverage that fits your farm</p>
+                        <p>With you when you are at the Wheel</p>
+                            </div>
+                         
+                            <div className="col-sm-4">
+                                <br></br>
+                                <p></p>
+                                <p></p>
+                            </div>
+                            </div>
+                    </div>
+                {/* </Jumbotron> */}
+            </div>
+        );
+    }
+}
+
+export default Header;
