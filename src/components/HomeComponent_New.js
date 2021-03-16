@@ -6,6 +6,8 @@ import { Card, CardImg, CardText, CardBody, CardTitle,Form,FormGroup,Input, Butt
 
 import {Link} from 'react-router-dom'
 
+import './common.css'
+
 function RenderCard({item,onClick}) {
     
     const [modalIsOpen,setModalIsOpen] = useState(false);
@@ -25,7 +27,7 @@ function RenderCard({item,onClick}) {
       
         <Card>
             <Link to={`/menu/${item.id}`} ></Link>
-            <CardImg  className="card-img-top img-fluid"  src={item.image} alt={item.name} />
+            <CardImg  className="card-img-top img-css"  src={item.image} alt={item.name} />
             <CardBody>
             <CardTitle ><h3>{item.name}</h3></CardTitle>
             
@@ -90,25 +92,24 @@ const Lob = (props) => {
 
 }
  
-
+import './common.css'
 function Home(props) {
     return(
         <div className="container">
             <div className="row align-items-start">
             
-
-                  <div className="col-12 col-md m-1">
+                  <div className="col-12 col-md  m-1">
                     <RenderCard item={props.personalauto} />
                 </div>
-                <div className="col-12 col-md m-1">
+                <div className="col-12 col-md  m-1">
                     <RenderCard item={props.umbrella} />
                 </div>
-                <div className="col-12 col-md m-1">
+                <div className="col-12 col-md  m-1 order-sm-first">
                     <RenderCard item={props.homeowner} />
                 </div> 
-                {/* <div className="col-12 col-md m-1">
+                { /*<div className="col-12 col-md m-1">
                     <RenderCard item={props.renter} />
-                </div> */}
+    </div> */}
             </div>
         </div>
     );
