@@ -14,13 +14,8 @@ class Policy extends Component {
   
 
   componentWillMount() {
-<<<<<<< HEAD
     fetch("http://64.251.19.189:5000/policies")
    // fetch('../shared/PolicyInfo.json')
-=======
-    //fetch("http://localhost:5000/policies")
-    fetch("http://64.251.19.189:5000/policies")
->>>>>>> 0765f277732390884c1dbb91cdb721353471287a
       .then(res => res.json())
       .then(data => this.setState({ policies: data }));
       //fetch('../shared/PolicyInfo.json')
