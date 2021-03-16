@@ -72,7 +72,7 @@ return (
 
 <ReactTable striped bordered hover data={this.props.policies}
  columns={columns} defaultPageSize = {5} 
-  Button="view" />
+  Button="view"  className="-striped -highlight" />
  
 </div>
 

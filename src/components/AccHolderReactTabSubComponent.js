@@ -54,6 +54,25 @@ render() {
 ]
 
 
+const data2 = [{PolicyPeriod}]
+     // alert (entity)
+  const column2 = [
+    {
+      Header:"Address",
+      accessor: "PolicyPeriod.Policy.Account.AccountHolderContact.PrimaryAddress.State.DisplayName"
+    //  ,accessor: "PolicyPeriod.Policy.Account.AccountHolderContact.PrimaryAddress.State.PostalCode"
+   },
+   {
+    Header:"PostalCode",
+    accessor:"PolicyPeriod.Policy.Account.AccountHolderContact.PrimaryAddress.PostalCode"
+   },
+   {
+    Header:"Country",
+    accessor:"PolicyPeriod.Policy.Account.AccountHolderContact.PrimaryAddress.Country.DisplayName"
+   }   
+]
+
+
 
 return (
 
@@ -62,9 +81,17 @@ return (
 <Button onClick={this.props.backbutton}>Back</Button>
   <br />
   <br />
-<ReactTable striped bordered hover data={data}
-columns={columns} defaultPageSize = {5} />
+  <div className="row">
+    <div className="col">
+      <ReactTable striped bordered hover data={data}
+        columns={columns} defaultPageSize = {5} className="-striped -highlight"/>
+    </div>
+    <div className="col">
+    <ReactTable striped bordered hover data={data2}
+    columns={column2} defaultPageSize = {5} className="-striped -highlight"/>
+    </div>
 
+</div>
 </div>
 
 )

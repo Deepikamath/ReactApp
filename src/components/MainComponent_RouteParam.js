@@ -30,6 +30,7 @@ import Policy from './policycomponent';
 import PolicyNew from './policynewcomponent';
 import AccHolderSub from './AccHolderSubComponent';
 import ReactTableExp from './ReactTableExpComponent';
+import MaterialUI from './materialUIComponent'
 class Main extends Component {
 
   constructor(props) {
@@ -117,6 +118,7 @@ return(
             <Route exact path="/Policy" component={Policy}></Route>
             <Route exact path="/PolicyInfo" component={AccHolderSub}></Route>
             <Route exact path="/PolicyNew" component={PolicyNew}></Route>
+            <Route exact path="/MaterialUI" component={MaterialUI}></Route>
             <Route exact path="/ReactTable" component={ReactTableExp}></Route>
             {/* <Route exact path="/homeowners" component={HomeOwners}></Route>
             <Route exact path="/button" component={Buttoncomp}></Route>

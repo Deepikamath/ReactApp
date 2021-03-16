@@ -39,8 +39,8 @@ address{
     object-fit: cover;
 }
 
-.ReactTable .rt-thead .rt-resizable-header-content {
+.ReactTable .rt-thead {
    
-    background-color: rgb(95, 65, 179);
+    background-color: rgb(52, 8, 173);
     color: white;
 }

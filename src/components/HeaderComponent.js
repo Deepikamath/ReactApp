@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron, Button,Modal, ModalHeader ,ModalBody, FormGroup, Label, Input,Form} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import {JUMBO} from '../shared/jumbotronmsg';
+import PolicyNew from './policynewcomponent'
 
 class Header extends Component {
     constructor(props) {
         super(props);
     
         this.toggleNav = this.toggleNav.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
         this.state = {
           isNavOpen: false,
           jumbo:JUMBO
@@ -19,7 +22,18 @@ class Header extends Component {
           isNavOpen: !this.state.isNavOpen
         });
       }
-
+      toggleModal(){
+        this.setState({
+            isModalOpen : !this.state.isModalOpen
+             });
+    }
+    handleLogin(event) {
+        this.toggleModal();
+        alert("Username: " + this.username.value + " Password: " + this.password.value );
+        <PolicyNew />
+       // event.preventDefault();
+    }
+    
     render() {
         const companyDetails = this.state.jumbo.map((jumbotext) => {
              
@@ -28,13 +42,14 @@ class Header extends Component {
            
             //  <h2>{jumbotext.tagName1}</h2></div>
         }
+        
         )
         return(
             <div>
                 <Navbar dark expand="md">
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand className="mr-auto" href="/"><img src='assets/images/Capture.png' height="30" width="41" alt='Hasting Mutual Company' /></NavbarBrand>
+                        <NavbarBrand className="mr-auto" href="/"><img src='assets/images/capture.png' height="30" width="41" alt='Hasting Mutual Company' /></NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                             <NavItem>
@@ -69,12 +84,20 @@ class Header extends Component {
                                <NavItem>
                                 <NavLink className="nav-link" to='/Policy'><span className="fa fa-database"></span>Policy</NavLink>
                             </NavItem>
-                           {/* <NavItem>
-                                <NavLink className="nav-link" to='/ReactTable'><span className="fa fa-pencil"></span>Table example</NavLink>
-                            </NavItem>  */}
+                           <NavItem>
+                                <NavLink className="nav-link" to='/MaterialUI'><span className="fa fa-pencil"></span>Table example</NavLink>
+                            </NavItem> 
                             <NavItem>
                                 <NavLink className="nav-link" to='/PolicyNew'><span className="fa fa-newspaper-o"></span>Policy New</NavLink>
                             </NavItem>
+                            </Nav>
+                            <Nav className="ml-auto" navbar>
+                                <NavItem>
+                                    <Button outline onClick ={this.toggleModal}>
+
+                                        <span className="fa fa-sign-in fa-lg"></span> Login
+                                    </Button>
+                                </NavItem>
                             </Nav>
                         </Collapse>
                     </div>
@@ -100,6 +123,34 @@ class Header extends Component {
                             </div>
                     </div>
                 {/* </Jumbotron> */}
+
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
+                        <ModalBody>
+                            <Form onSubmit = {this.handleLogin}>
+                                <FormGroup>
+                                    <Label htmlFor= "username">Username</Label>
+                                    <Input type ="text" id ="username" name ="username"
+                                        innerRef={(input) => this.username = input} />
+                                </FormGroup>
+                                <FormGroup>
+                                   
+                                     <Label htmlFor="password">Password</Label>
+                                    <Input type ="password" id ="password" name ="password"
+                                     innerRef={(input) => this.password = input} />
+                                </FormGroup>
+                                {/* <FormGroup check>
+                                    <Label check>
+                                        <Input type = "checkbox" name="remember"
+                                         innerRef={(input) => this.remember = input} />
+                                        Remember me
+                                    </Label>
+                                </FormGroup> */}
+                                <Button type="submit" value="submit" color ="primary" >Login</Button>
+                            </Form>
+                        </ModalBody>
+                 </Modal>
+            
             </div>
         );
     }
