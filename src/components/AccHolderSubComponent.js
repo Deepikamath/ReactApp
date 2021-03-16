@@ -52,11 +52,12 @@ return(
     </tr> 
   </Table> */}
      
-  <Table bordered="true">
+  <Table bordered="true" className="-striped -highlight">
       {/* <tr> <td><thead>Account</thead></td> <td></td> </tr> */}
-      <th>Account header</th>
-       
-
+     <tr>
+      <th>Account Details</th>
+       <th></th>
+      </tr>
       <tr><td>Account Name</td>
       
       <td>{entity}</td>
@@ -72,8 +73,20 @@ return(
        <tr><td>In Force Premium</td>
       <td>{PolicyPeriod.TotalPremiumRPT}</td>
       </tr>
+      <tr><td>Account Holder Contact</td>
+      <td>{PolicyPeriod.Policy.Account.AccountHolderContact.PrimaryAddress.State.DisplayName}<br/>
+      {PolicyPeriod.Policy.Account.AccountHolderContact.PrimaryAddress.PostalCode}<br/>
+      {PolicyPeriod.Policy.Account.AccountHolderContact.PrimaryAddress.Country.DisplayName}</td>
+      </tr>
+      <tr><td>Policy Location</td>
      
-     
+      <td>{PolicyPeriod.PolicyLocations.Entry.AccountLocation.AddressLine1}<br/>
+      {PolicyPeriod.PolicyLocations.Entry.AccountLocation.State}<br/>
+      {PolicyPeriod.PolicyLocations.Entry.AccountLocation.Country} <br/>
+      {PolicyPeriod.PolicyLocations.Entry.AccountLocation.PostalCode}<br/>
+      {PolicyPeriod.PolicyLocations.Entry.AccountLocation.City}<br/>
+      </td>
+      </tr>
      </Table>
       </div>
 

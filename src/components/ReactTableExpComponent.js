@@ -3,7 +3,7 @@ import "react-table-v6/react-table.css";
 import {  Button} from "reactstrap";
 import React, { Component } from 'react';
 import AccHolderReactTabSub from './AccHolderReactTabSubComponent';
-
+import AccHolderSub from './AccHolderSubComponent';
 class ReactTableExp extends Component {
     constructor(props) {
         super(props);
@@ -29,7 +29,8 @@ render() {
     if(this.state.selectedPol!= null){
       
          return(
-        <AccHolderReactTabSub PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
+        // <AccHolderReactTabSub PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
+        <AccHolderSub PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
         )
         }
       else{
@@ -55,7 +56,7 @@ render() {
    
     Cell: ({original}) => {       
     return(      
-        <Button  style={{backgroundColor:"orange" }} 
+        <Button  style={{backgroundColor:"grey" }} 
          onClick={ () => this.onViewSelect(original.PolicyPeriod)}
         >View</Button>
 
