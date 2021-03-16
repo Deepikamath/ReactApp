@@ -40,7 +40,9 @@ address{
 }
 
 .ReactTable .rt-thead {
-   
-    background-color: rgb(52, 8, 173);
+    padding: 20px;
+    background-color: rgb(52, 18, 145);
     color: white;
 }
+
+ 

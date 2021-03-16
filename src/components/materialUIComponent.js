@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 
 const CustomTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: theme.palette.common.blue,
     color: theme.palette.common.white,
   },
   body: {
@@ -35,49 +35,49 @@ const styles = theme => ({
 });
 
 let id = 0;
-function createData(name, calories, fat, carbs, protein) {
+function createData(Account, Policy, Transaction, Request) {
   id += 1;
-  return { id, name, calories, fat, carbs, protein };
+  return { id,  Account, Policy, Transaction, Request };
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData( 5727651905, 3651656152, '0000050862', 'PolicyChange'),
+  createData( 5727651905, 1148333668, '0000160186', 'submission'),
+  createData( 5727651905, 7048937106, '0000205549', 'PolicyChange'),
+  createData( 5727651905, 7048937106, '0000355328', 'PolicyChange'),
+  createData( 5727651905, 5005260162, '0000413362', 'PolicyChange')
 ];
 
 function CustomizedTable(props) {
   const { classes } = props;
 
   return (
+    <div className="container">
     <Paper className={classes.root}>
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <CustomTableCell>Dessert (100g serving)</CustomTableCell>
-            <CustomTableCell align="right">Calories</CustomTableCell>
-            <CustomTableCell align="right">Fat (g)</CustomTableCell>
-            <CustomTableCell align="right">Carbs (g)</CustomTableCell>
-            <CustomTableCell align="right">Protein (g)</CustomTableCell>
+           
+            <CustomTableCell align="right">Account</CustomTableCell>
+            <CustomTableCell align="right">Policy</CustomTableCell>
+            <CustomTableCell align="right">Transaction</CustomTableCell>
+            <CustomTableCell align="right">CustomerRequest</CustomTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map(row => (
             <TableRow className={classes.row} key={row.id}>
-              <CustomTableCell component="th" scope="row">
-                {row.name}
-              </CustomTableCell>
-              <CustomTableCell align="right">{row.calories}</CustomTableCell>
-              <CustomTableCell align="right">{row.fat}</CustomTableCell>
-              <CustomTableCell align="right">{row.carbs}</CustomTableCell>
-              <CustomTableCell align="right">{row.protein}</CustomTableCell>
+              
+              <CustomTableCell align="right">{row.Account}</CustomTableCell>
+              <CustomTableCell align="right">{row.Policy}</CustomTableCell>
+              <CustomTableCell align="right">{row.Transaction}</CustomTableCell>
+              <CustomTableCell align="right">{row.Request}</CustomTableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </Paper>
+    </div>
   );
 }
 
