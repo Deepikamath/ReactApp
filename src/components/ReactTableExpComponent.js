@@ -26,21 +26,22 @@ onViewSelect(PolicyPeriod){
 
 
 render() {
-  const i=1;
+  //const i=1;
     if(this.state.selectedPol!= null){
-      if(i ==1){
+    //  if(i ==1){
          return(
         // <AccHolderReactTabSub PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
         // alert("Hi"+ i)
 
          <AccHolderSub PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
-          ) }else if(i==2){
-            return(
-              // alert("Hi"+ i)
-               <AccSubTemplate PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
-            )
+          ) 
+    //     }else if(i==2){
+    //         return(
+    //           // alert("Hi"+ i)
+    //            <AccSubTemplate PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
+    //         )
 
-    }
+    // }
 
         }
       else{
