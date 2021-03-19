@@ -33,7 +33,7 @@ return(
   <Table bordered="true" className="-striped -highlight">
      
      <tr>
-      <th>Account Details afc digital</th>
+      <th>Account Details</th>
        <th></th>
       </tr>
       <tr><td>Account Name</td>      
