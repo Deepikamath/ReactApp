@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent_New';
-import { Navbar, NavbarBrand } from 'reactstrap';
+import { NavbarBrand } from 'reactstrap';
 //import Menu from './MenuComponent_RouterSPA';
 import Menu_param from './MenuComponent_RouteParam';
 
@@ -31,6 +31,10 @@ import PolicyNew from './policynewcomponent';
 import AccHolderSub from './AccHolderSubComponent';
 import ReactTableExp from './ReactTableExpComponent';
 import MaterialUI from './materialUIComponent'
+import MyPolicies from './MyPoliciesComponent';
+import NewHome from './NewHomeComponent';
+
+
 class Main extends Component {
 
   constructor(props) {
@@ -120,6 +124,11 @@ return(
             <Route exact path="/PolicyNew" component={PolicyNew}></Route>
             <Route exact path="/MaterialUI" component={MaterialUI}></Route>
             <Route exact path="/ReactTable" component={ReactTableExp}></Route>
+            
+           
+            <Route exact path="/NewHome" component={NewHome}></Route>
+             
+             <Route exact path="/MyPolicies" component={MyPolicies}></Route>
             {/* <Route exact path="/homeowners" component={HomeOwners}></Route>
             <Route exact path="/button" component={Buttoncomp}></Route>
             <Route exact path="/NextPreviousButton" component={NextPreviousButton}></Route> */}

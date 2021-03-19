@@ -2,42 +2,67 @@ Table {
   width: 50%;
   table-layout: fixed;
   border-color: rgb(243, 11, 58);
+  border-radius: 4px;
 }
 
 td{
   background-color:rgba(238, 237, 236, 0.993);
-  border: 1px solid gray;
+  /* border: 1px solid black;  */
   padding: 6px;
 }
 table {border-spacing: 2px;}
 td    {padding: 0px;}
-
+Table td{border:1px solid white;}
 Table tr th {
   text-align: left;
-  background:#285d7a;
-  color: #f89728;
+  background-color: #f78d02fa;
+        color: white; 
   size: 30px;
-  border-color: rgb(243, 11, 58);
+ 
+  border:1px solid white;
+}
+.table th, .table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 2 solid #000000;
 }
 
 .Button {
 color:#6fd829;
 }
 .btn-secondary {
-  color: #fff;
-  background-color: red;
-  border-color: #6c757d;
+  color: #0e0c0c;
+  background-color: #eff2f5;
+  border-color: white;
 }
-.btn-standard.btn-pink {
-  color: #fff;
-  border: 0;
-  box-shadow: 0px 10px 40px -10px rgba(255,0,131,0.5);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-  -moz-transition: all 0.2s, -moz-transform 0.5s;
-  -o-transition: all 0.2s, -o-transform 0.5s;
-  -webkit-transition: all 0.2s, -webkit-transform 0.5s;
-  transition: all 0.2s, transform 0.5s;
-}
+
+
+
+
+ .react-tab-list {
+    list-style: none;
+    margin: 0;
+    background: #1C5A74;
+    cursor: pointer;
+ } .react-tab {
+      display: inline-block;
+      line-height: 3em;
+      padding-left: 1em;
+      padding-right: 1em;
+      color: #D7A396;
+    }
+  
+    
+
+ .react-tab-panel {
+    display: none;
+    padding: 0.5em;
+    background: #F4DDBE;
+    min-height: 300px;
+    
+  }
+  Table {
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 350px;
+  }

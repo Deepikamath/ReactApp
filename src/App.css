@@ -12,7 +12,7 @@
 }
 
 .footer{
-    background-color: #e49319;
+    background-color: #060b26;
     margin:0px auto;
     padding: 20px 0px 20px 0px;
 }
@@ -27,11 +27,11 @@
 address{
     font-size:80%;
     margin:0px;
-    color:#0f0f0f;
+    color:#007bff;
 }
 
 .navbar-dark {
-    background-color: #eb8a30;
+    background-color: #060b26;
 }
 
 .card-img-top {
@@ -45,4 +45,89 @@ address{
     color: white;
 }
 
+.btn-secondary {
+    color: #0e0c0c;
+    background-color: #eff2f5;
+    border-color: white;
+  }
  
+  body {
+  background: #c5e1a5
+  }
+.tab{
+  
+    margin-top: 10px;
+    color: rgba(0,0,0,0.6);
+    display: inline-block;
+     
+    padding: 10px;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    border-radius: 10px 10px 0 0;
+    /* cursor: pointer &:hover, &.active; */
+      /* background: lightsteelblue; */
+      border-bottom: 2px solid rgba(0,0,0,0.5);
+      font-size:medium;
+}
+  .content{
+    
+    color: rgba(0,0,0,0.6);
+    background: rgba(255,255,255,0.2)}
+
+     h5{
+        color:white;
+    }
+
+    .policiypreviewdiv{
+       
+        background-color:#f5f5f5;
+       
+    }
+
+    .policiypreviewHeader{
+        height: 40px;
+        background-color: #f78d02fa;
+        color: white;
+        font-size: 1.2rem;
+        padding-left: 20px;
+        padding-top: 5px;
+    }
+
+    .classtd{
+        width:220px;
+        background-color: rgb(255, 255, 255);
+        
+    padding-left: 50px;
+
+    }
+    .classPolicyLabel{
+        padding-top: 10px;
+        color:#f78d02fa;
+    }
+    .classcontent{
+        overflow-x: scroll; 
+    }
+    .tabheader{
+        width:300px;
+    }
+    .btn-primary{
+        border-radius: 12px;
+        background-color: rgb(235, 127, 55);
+    }
+
+    .card{
+        margin-top:  20px;
+        
+    }
+    .cardtext{
+        padding-left: 20px;
+    }
+    .card-body {
+        
+        min-height: 1px;
+        padding: 0rem;
+        padding-top: 0rem;
+        padding-right: 0rem;
+        padding-bottom: 0rem;
+        padding-left: 0rem;
+    }
+    

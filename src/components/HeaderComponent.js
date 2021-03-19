@@ -56,7 +56,7 @@ class Header extends Component {
                                 <NavLink className="nav-link"  to='/home'><span className="fa fa-home fa-lg"></span> Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to='/aboutus'><span className="fa fa-info fa-lg"></span>AFC About Us</NavLink>
+                                <NavLink className="nav-link" to='/aboutus'><span className="fa fa-info fa-lg"></span>About Us</NavLink>
                             </NavItem>
                             <NavItem>
                             {/* <NavLink className="nav-link" to='/Insurance'><span className="fa fa-info fa-lg"></span> Insurance</NavLink> */}
@@ -84,11 +84,18 @@ class Header extends Component {
                                <NavItem>
                                 <NavLink className="nav-link" to='/Policy'><span className="fa fa-database"></span>Policy</NavLink>
                             </NavItem>
-                           <NavItem>
+                           {/* <NavItem>
                                 <NavLink className="nav-link" to='/MaterialUI'><span className="fa fa-pencil"></span>Table example</NavLink>
-                            </NavItem> 
+                            </NavItem>  */}
                             <NavItem>
                                 <NavLink className="nav-link" to='/PolicyNew'><span className="fa fa-newspaper-o"></span>Policy New</NavLink>
+                            </NavItem>
+
+                            <NavItem>
+                                <NavLink className="nav-link" to='/MyPolicies'><span className="fa fa-phone fa-lg"></span>Tab Example</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link" to='/NewHome'><span className="fa fa-phone fa-lg"></span>New Screen</NavLink>
                             </NavItem>
                             </Nav>
                              

@@ -4,60 +4,41 @@ import { Table, Button} from "reactstrap";
 //import { withRouter } from 'react-router-dom';
 import AccHolderHomeScreen from './AccHolderHomeScreenComponent'
 import {PolicyInfo} from '../shared/PolicyInfo.json'
-class AccHolderSub extends Component {
+class PolicyDetail extends Component {
   constructor(props) {
     super(props);
-   }
- 
+  
+  }
 
-render() {
-  // alert(this.props.policies.length)
-  //if(this.props.PolicyPeriod.length > 0 ){
-    
+
+render() {  
     const PolicyPeriod = this.props.PolicyPeriod
     var entity= null;
-  // alert(PolicyPeriod.PolicyNumber)
-    const Subtype= PolicyPeriod.Policy.Account.AccountHolderContact.Subtype
+  
+  const Subtype= PolicyPeriod.Policy.Account.AccountHolderContact.Subtype
+  //alert(Subtype)
   if(Subtype== 'Company'){
     entity= PolicyPeriod.Policy.Account.AccountHolderContact['entity-Company'].Name
   }
-  else{
+  else if(Subtype== 'Person') {
     entity= PolicyPeriod.Policy.Account.AccountHolderContact['entity-Person'].Name
   }
-      
-return(
 
-  
-
+return( 
   <div className = "container">
      <Button onClick={this.props.backbutton}>Back</Button>
   <br />
   <br />
-  {/* <Table bordered='true'>
-   <thead>
-      <tr>
-        <th>Transaction Number</th>
-      </tr>
-     
-    </thead>       
-    <tr>      
-      <td>
-         {PolicyPeriod.Job.JobNumber}
-      </td>    
-    </tr> 
-  </Table> */}
-     
+   
   <Table bordered="true" className="-striped -highlight">
-      {/* <tr> <td><thead>Account</thead></td> <td></td> </tr> */}
+     
      <tr>
-      <th>Account Details</th>
+      <th>Account Details afc digital</th>
        <th></th>
       </tr>
-      <tr><td>Account Name</td>
-      
+      <tr><td>Account Name</td>      
       <td>{entity}</td>
-      </tr>
-    
+      </tr>    
        <tr><td>Account Number</td>
       <td>{PolicyPeriod.Policy.Account.AccountNumber}
       </td>
@@ -73,8 +54,7 @@ return(
       {PolicyPeriod.Policy.Account.AccountHolderContact.PrimaryAddress.PostalCode}<br/>
       {PolicyPeriod.Policy.Account.AccountHolderContact.PrimaryAddress.Country.DisplayName}</td>
       </tr>
-      <tr><td>Policy Location</td>
-     
+      <tr><td>Policy Location</td>     
       <td>{PolicyPeriod.PolicyLocations.Entry.AccountLocation.AddressLine1}<br/>
       {PolicyPeriod.PolicyLocations.Entry.AccountLocation.State}<br/>
       {PolicyPeriod.PolicyLocations.Entry.AccountLocation.Country} <br/>
@@ -84,10 +64,8 @@ return(
       </tr>
      </Table>
       </div>
-
-)
-  
+)  
 } 
 }
 
-export default  AccHolderSub ;
+export default  PolicyDetail ;

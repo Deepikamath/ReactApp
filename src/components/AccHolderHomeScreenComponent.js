@@ -47,11 +47,8 @@ else{
    // alert(groups +"  print")
     //if(this.state.selectedPol == null){
     const policyItems = this.props.policies.map(policy => (
-     
-    
-    <tr>
-      <td>
-        
+   <tr>
+      <td>        
     {policy.PolicyPeriod.Policy.Account.AccountNumber}
     </td>
     <td>
@@ -76,15 +73,7 @@ else{
     
 return(
   <div className = "container">
-      {/* <div className="row row-header">
-        <div className="col-sm-9">
-        </div>
-        <div className="col-sm-3">
-         <h2>Account #</h2>
-         <h3>{accno}</h3>
-        </div>
-
-     </div>                    */}
+     
   <Table bordered='true' CELLSPACING='1'>
     <thead>
     <tr>
