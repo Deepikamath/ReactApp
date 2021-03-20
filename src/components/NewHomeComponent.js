@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import './common.css'
 import { Table, Button } from "reactstrap";
-//import sidebarRouter from './sidebarRouterComponent';
+import sidebarRouter from './sidebarRouterComponent';
 
 //import { withRouter } from 'react-router-dom';
 class NewHome extends Component {
