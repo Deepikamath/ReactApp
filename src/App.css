@@ -85,7 +85,7 @@ address{
 
     .policiypreviewHeader{
         height: 40px;
-        background-color: #f78d02fa;
+        background-color: #f78d02;
         color: white;
         font-size: 1.2rem;
         padding-left: 20px;
@@ -101,7 +101,7 @@ address{
     }
     .classPolicyLabel{
         padding-top: 10px;
-        color:#f78d02fa;
+        color:#f78d02;
     }
     .classcontent{
         overflow-x: scroll; 
