@@ -88,7 +88,7 @@ class Header extends Component {
                                 <NavLink className="nav-link" to='/MaterialUI'><span className="fa fa-pencil"></span>Table example</NavLink>
                             </NavItem>  */}
                             <NavItem>
-                                <NavLink className="nav-link" to='/PolicyNew'><span className="fa fa-newspaper-o"></span>Policy New</NavLink>
+                                <NavLink className="nav-link" to='/PolicyNew'><span className="fa fa-newspaper-o"></span>Policy Table</NavLink>
                             </NavItem>
 
                             <NavItem>
