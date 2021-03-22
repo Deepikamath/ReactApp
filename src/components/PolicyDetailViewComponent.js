@@ -1,21 +1,21 @@
 
 import React, { Component } from "react";
-import { Table, Button, Label, Card, CardBody, CardTitle, CardText } from "reactstrap";
+import { Table, Label, Card, CardBody, CardTitle, CardText } from "reactstrap";
 import Moment from 'moment'
 class PolicyDetailView extends Component {
   constructor(props) {
     super(props);
-
   }
+
   fnFormarAmt(amt) {
     return (amt * 1.00).toLocaleString(navigator.language, { minimumFractionDigits: 0 })
   }
 
   fnConverages(PolicyPeriod) {
-    if (PolicyPeriod.Policy.Product.DisplayName == "General Liability") {
+    if (PolicyPeriod.Policy.Product.DisplayName === "General Liability") {
       return this.fnGLExposure(PolicyPeriod)
     }
-    else (PolicyPeriod.Policy.Product.DisplayName == "Workers' Compensation")
+    else if (PolicyPeriod.Policy.Product.DisplayName === "Workers' Compensation")
 
     return this.fnWorkersComp(PolicyPeriod)
   }
@@ -82,7 +82,7 @@ class PolicyDetailView extends Component {
               <td>{WCLine.ClassCode.ShortDesc}</td>
               <td>{WCLine.NumEmployees}</td>
 
-              <td>{WCLine.IfAnyExposure == "true" ? "If Any" : WCLine.BasisAmount}</td>
+              <td>{WCLine.IfAnyExposure === "true" ? "If Any" : WCLine.BasisAmount}</td>
 
             </tr>
 
@@ -94,29 +94,33 @@ class PolicyDetailView extends Component {
   }
   fnAddress(obj) {
     var str = ""
-    if (obj.AddressLine1 != undefined && obj.AddressLine1.length > 0) {
+    if (obj.AddressLine1 !== undefined && obj.AddressLine1.length > 0) {
       str = str + obj.AddressLine1 + ", "
     }
-    if (obj.AddressLine2 != undefined && obj.AddressLine2.length > 0) {
+    if (obj.AddressLine2 !== undefined && obj.AddressLine2.length > 0) {
       str = str + obj.AddressLine2 + ", "
     }
-    if (obj.AddressLine3 != undefined && obj.AddressLine3.length > 0) {
+    if (obj.AddressLine3 !== undefined && obj.AddressLine3.length > 0) {
       str = str + obj.AddressLine3 + ", "
     }
-    if (obj.City != undefined && obj.City.length > 0) {
+    if (obj.City !== undefined && obj.City.length > 0) {
       str = str + obj.City + ", "
     }
-    if (obj.State.DisplayName != undefined && obj.State.DisplayName.length > 0) {
+    if (obj.State.DisplayName !== undefined && obj.State.DisplayName.length > 0) {
       str = str + obj.State.DisplayName + ", "
+    } else if (obj.State !== undefined && obj.State.length > 0) {
+      str = str + obj.State + ", "
     }
-    if (obj.PostalCode != undefined && obj.PostalCode.length > 0) {
-      str = str + obj.PostalCode + " "
+    if (obj.PostalCode !== undefined && obj.PostalCode.length > 0) {
+      str = str + obj.PostalCode + ", "
     }
-    if (obj.County != undefined && obj.County.length > 0) {
-      str = str + obj.County + " "
+    if (obj.County !== undefined && obj.County.length > 0) {
+      str = str + obj.County + ", "
     }
-    if (obj.Country.DisplayName != undefined && obj.Country.DisplayName.length > 0) {
+    if (obj.Country.DisplayName !== undefined && obj.Country.DisplayName.length > 0) {
       str = str + obj.Country.DisplayName
+    } else if (obj.Country !== undefined && obj.Country.length > 0) {
+      str = str + obj.Country
     }
     return (str)
   }
@@ -133,13 +137,13 @@ class PolicyDetailView extends Component {
     var entityPersonLN = null;
 
     //  const Subtype = props.Subtype;
-    if (obj.Subtype == 'Company') {
+    if (obj.Subtype === 'Company') {
       entity = obj['entity-Company'].Name
       return (
         <span>{entity}</span>
       );
     }
-    else if (obj.Subtype == 'Person') {
+    else if (obj.Subtype === 'Person') {
       entityPersonFN = obj['entity-Person'].FirstName
       entityPersonLN = obj['entity-Person'].LastName
       return (
@@ -295,7 +299,7 @@ class PolicyDetailView extends Component {
             <CardText className="cardtext">
               {PolicyPeriod.PolicyContactRoles.Entry.length > 1 ?
                 PolicyPeriod.PolicyContactRoles.Entry.map(ent => {
-                  return ((ent.Subtype == "PolicyPriNamedInsured" ?
+                  return ((ent.Subtype === "PolicyPriNamedInsured" ?
                     <div>
                       <Label className="classPolicyLabel">Name</Label>    <br></br>
                       <span>{this.fnName(ent.AccountContactRole.AccountContact.Contact)}</span>   <br></br>
@@ -306,7 +310,7 @@ class PolicyDetailView extends Component {
                   )
                 })
                 :
-                (PolicyPeriod.PolicyContactRoles.Entry.Subtype == "PolicyPriNamedInsured" ?
+                (PolicyPeriod.PolicyContactRoles.Entry.Subtype === "PolicyPriNamedInsured" ?
                   <div>
                     <Label className="classPolicyLabel">Name</Label>    <br></br>
                     <span>{this.fnName(PolicyPeriod.PolicyContactRoles.Entry.AccountContactRole.AccountContact.Contact)}</span>   <br></br>

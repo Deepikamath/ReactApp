@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Form,Input,Row,Col, FormGroup,Button, Label } from 'reactstrap';
 
 //import {POLICYINFO} from '../shared/PolicyInfoPayload';
 
