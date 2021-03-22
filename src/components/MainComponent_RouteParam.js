@@ -49,7 +49,7 @@ class Main extends Component {
         homeowners: HOMEOWNERS,
         umbrellas:UMBRELLA,
         renters:RENTERS,
-        screens:SCREENS
+        screens:SCREENS 
        // selectedDish: null
     };
   }
@@ -71,6 +71,8 @@ class Main extends Component {
         personalauto={this.state.personalautos.filter((personalauto)=> personalauto.featured)[0]} 
         umbrella={this.state.umbrellas.filter((umbrella)=> umbrella.featured)[0]} 
         homeowner={this.state.homeowners.filter((homeowner)=> homeowner.featured)[0]} 
+        
+    
       //  renter={this.state.renters.filter((renter)=> renter.id[0])} 
         />
         
