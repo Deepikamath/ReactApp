@@ -153,7 +153,8 @@ class PolicyDetailView extends Component {
     const PolicyPeriod = this.props.PolicyPeriod
 
     return (
-      <div>  <Button onClick={this.props.backbutton}>Back</Button>
+      <div>  <button className="newbtn" onClick={this.props.backbutton}>Back</button>
+      {/* <button  onClick={this.props.backbutton} class="button">back</button> */}
         <Card className="card" >
 
           <CardBody className="policiypreviewdiv">

@@ -22,9 +22,9 @@ class Policy extends Component {
 
   
 
-  componentWillMount() {
+  componentDidMount() {
     //fetch("http://localhost:5000/policies")
-    fetch("http://64.251.19.189:5000/policies")
+    fetch("http://64.251.19.189:5001/policies")
     
    // fetch('../shared/PolicyInfo.json')
       .then(res => res.json())

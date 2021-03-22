@@ -43,7 +43,7 @@ class PolicyPreviewInfo extends Component {
               <span>
               {Moment(this.props.PolicyPeriod.PeriodEnd).format('MM/DD/YYYY')}
               </span>  <br></br>
-             <Button className="btn-primary" onClick={this.props.viewbutton}>View</Button>
+             <button className="newbtn" onClick={this.props.viewbutton}>View</button>
              </CardText>
             </CardBody>
             </Card>

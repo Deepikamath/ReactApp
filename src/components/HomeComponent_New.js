@@ -37,55 +37,16 @@ function RenderCard({item,onClick}) {
                 </Button>
 
             </CardBody>
-          <Modal isOpen={modalIsOpen}>
-              
-                <button onClick={ setModalIsOpenToFalse}>x</button>
-                <LobDescription />
+          <Modal isOpen={modalIsOpen} size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered>
+          
+                <button className="ModelClose" onClick={ setModalIsOpenToFalse}>x</button>
+              <h2><br></br>{item.description}<br></br>
+              <br></br></h2>  
+               
             </Modal>
                  </Card>
-    );
-
-}
-
-function LobDescription () {
-
-    return (
-        
-        <ul>
-        
-             
-             <p>A Standard personal auto offering defines a standard set of coverages, limits, and deductibles. A Beginning Driver offering has different limits and deductibles to satisfy the needs of drivers who are just starting to drive as well as their financially-responsible parents</p>
-                 
-        </ul>     
-        
-    )
-
-}
-const Lob = (props) => {
-        
-    const lob = props.dishes.map((dish) => {
-        return(
-                <div key = {dish.id} className="col-12 col-md-5 m-1">
-                   {/* <RenderMenuItem dish={dish} onClick={props.onClick}/> */}
-                   <RenderCard dish={dish}/>
-                </div>
-        );
-    });
-
-    
-
-    return(
-        <div className = "container">
-             
-            <div className = "row">
-                
-                    {lob}
-
-            </div>
-            <div className = "row">
-                {/* {this.renderDish(this.state.selectedDish)} */}
-            </div>
-        </div>
     );
 
 }
@@ -98,13 +59,13 @@ function Home(props) {
             
 
                   <div className="col-12 col-md m-1">
-                    <RenderCard item={props.personalauto} />
+                    <RenderCard item={props.personalauto} Desc={props.persondesc}/>
                 </div>
                 <div className="col-12 col-md m-1">
-                    <RenderCard item={props.umbrella} />
+                    <RenderCard item={props.umbrella} Desc={props.umbrelladesc} />
                 </div>
                 <div className="col-12 col-md m-1">
-                    <RenderCard item={props.homeowner} />
+                    <RenderCard item={props.homeowner} Desc={props.homeownerdesc}/>
                 </div> 
                 {/* <div className="col-12 col-md m-1">
                     <RenderCard item={props.renter} />
