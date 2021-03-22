@@ -25,7 +25,7 @@ function RenderCard({item,onClick}) {
       
         <Card>
             <Link to={`/menu/${item.id}`} ></Link>
-            <CardImg  className="card-img-top img-fluid"  src={item.image} alt={item.name} />
+            <CardImg  className="card-img-top"  src={item.image} alt={item.name} />
             <CardBody>
             <CardTitle ><h3>{item.name}</h3></CardTitle>
             
