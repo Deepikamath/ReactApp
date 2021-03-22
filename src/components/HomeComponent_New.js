@@ -5,7 +5,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle,Form,FormGroup,Input, Butt
 // import { Link } from 'react-router-dom';
 
 import {Link} from 'react-router-dom'
-
+import './common.css'
 function RenderCard({item,onClick}) {
     
     const [modalIsOpen,setModalIsOpen] = useState(false);
@@ -25,7 +25,7 @@ function RenderCard({item,onClick}) {
       
         <Card>
             <Link to={`/menu/${item.id}`} ></Link>
-            <CardImg  className="card-img-top img-fluid"  src={item.image} alt={item.name} />
+            <CardImg  className="card-img-top img-css"  src={item.image} alt={item.name} />
             <CardBody>
             <CardTitle ><h3>{item.name}</h3></CardTitle>
             

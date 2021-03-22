@@ -66,11 +66,8 @@ color:#6fd829;
     border-spacing: 0;
     min-width: 350px;
   }
-  .img-fluid{
-    max-width: 100%;
-    height: 80px;
-  }
-  .img-align{
+  
+  .img-css{
     max-width: 100%;
     height: 80px;
   }
