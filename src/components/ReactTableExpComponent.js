@@ -30,10 +30,11 @@ render() {
     if(this.state.selectedPol!= null){
     //  if(i ==1){
          return(
-        // <AccHolderReactTabSub PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
+        //  <AccSubTemplate PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
+         <AccHolderReactTabSub PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
         // alert("Hi"+ i)
 
-         <AccHolderSub PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
+       // <AccHolderSub PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
           ) 
     //     }else if(i==2){
     //         return(
