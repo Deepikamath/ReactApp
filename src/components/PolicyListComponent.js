@@ -4,6 +4,7 @@ import { Table, Button, Card, CardImg, CardText, CardBody, CardTitle, } from "re
 import PolicyPreviewInfo from "./PolicyPreviewInfoComponent";
 import PolicyDetail from './PolicyDetailComponent'
 import PolicyDetailView from './PolicyDetailViewComponent'
+import PolicyDetailViewOrg from './PolicyDetailViewOrgComponent'
 //import { withRouter } from 'react-router-dom';
 class PolicyList extends Component {
     constructor(props) {
@@ -25,7 +26,8 @@ class PolicyList extends Component {
 
        if(this.state.selectedPol!= null){
         return(
-          <PolicyDetailView PolicyPeriod={this.state.selectedPol} backbutton={()=> this.onViewSelect(null)}></PolicyDetailView>   
+          // <PolicyDetailView PolicyPeriod={this.state.selectedPol} backbutton={()=> this.onViewSelect(null)}></PolicyDetailView>   
+          <PolicyDetailViewOrg PolicyPeriod={this.state.selectedPol} backbutton={()=> this.onViewSelect(null)}></PolicyDetailViewOrg>   
         // <PolicyDetail PolicyPeriod={this.state.selectedPol} backbutton={()=>{this.onViewSelect(null)}}> </PolicyDetail>
         )
        }else{
