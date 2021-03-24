@@ -3,7 +3,7 @@ import {Form,Input,Row,Col, FormGroup,Button } from 'reactstrap';
 
 import {SCREENS} from '../shared/question';
 import Question from './QuestionComponent';
-
+import {OPTIONS} from '../shared/options'
 class Label extends Component{
 
 //   constructor(props) {
@@ -29,9 +29,15 @@ class Label extends Component{
                            if(field.AnswerType == 'Text') 
                              return (<Col md={3}>                                                    
                              <Input type="Text" id={field.name} placeholder={field.Label} width="15px"/>                                     
-                             </Col>)                                       
-                          })}
-                  
+                             </Col>)  
+                        //       else if(field.AnswerType== 'Radio')
+                        //       {OPTIONS.optionfields.map((opt)=> {      
+                        //       return (<Col md={3}>  
+                        //        <Input type="radio" id={opt.name} placeholder={opt.Label} width="15px" />                                          
+                        //        {/* <Input type="Text" id={field.name} placeholder={field.Label} width="15px"/>                                      */}
+                        //        </Col>)                                     
+                        //   })}
+                        })}
 
                      </FormGroup>                         
                     </Form>  

@@ -49,7 +49,7 @@ address{
     color: #0e0c0c;
     background-color: #eff2f5;
     border-color: white;
-  }
+  } 
  
   body {
   background: #c5e1a5
@@ -57,7 +57,7 @@ address{
 .tab{
   
     margin-top: 10px;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0, 0, 0, 0.6);
     display: inline-block;
      
     padding: 10px;
@@ -66,7 +66,7 @@ address{
     /* cursor: pointer &:hover, &.active; */
       /* background: lightsteelblue; */
       border-bottom: 2px solid rgba(0,0,0,0.5);
-      font-size:medium;
+      font-size:large;
 }
   .content{
     
@@ -78,7 +78,7 @@ address{
     }
 
     .policiypreviewdiv{
-       
+     
         background-color:#f5f5f5;
        
     }
@@ -90,6 +90,21 @@ address{
         font-size: 1.2rem;
         padding-left: 20px;
         padding-top: 5px;
+        border-radius:20px;
+        border:0px;
+
+    }
+    .policiypreviewHeaderAccord{
+        height: 40px;
+        width: "100%";
+        background-color: #f78d02;
+        color: white;
+        font-size: 1.2rem;
+        padding-left: 20px;
+        padding-top: 5px;
+        padding-right: 80px;
+        border-radius:20px;
+        border:0px;
     }
 
     .classtd{

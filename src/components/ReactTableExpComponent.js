@@ -30,12 +30,13 @@ render() {
     if(this.state.selectedPol!= null){
     //  if(i ==1){
          return(
-        //  <AccSubTemplate PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
-         <AccHolderReactTabSub PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
+       //  <AccSubTemplate PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
+        // <AccHolderReactTabSub PolicyPeriod={this.state.selectedPol} />
         // alert("Hi"+ i)
 
-       // <AccHolderSub PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
+        <AccHolderSub PolicyPeriod={this.state.selectedPol} backbutton={ ()=> this.onBack()} />
           ) 
+          
     //     }else if(i==2){
     //         return(
     //           // alert("Hi"+ i)
@@ -69,9 +70,9 @@ render() {
     Cell: ({original}) => {
     return(
 
-        <Button
+        <button
          onClick={ () => this.onViewSelect(original.PolicyPeriod)}
-      className="fa fa-pencil"></Button>
+      className="fa fa-pencil-square-o"></button>
 
     )
 }}

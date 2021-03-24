@@ -1,21 +1,11 @@
 
 import React, { Component } from "react";
 import { Table, Label, Card, CardBody, CardTitle, CardText } from "reactstrap";
-import Moment from 'moment';
-
-import { makeStyles } from '@material-ui/core/styles';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-
+import Moment from 'moment'
 class PolicyDetailView extends Component {
   constructor(props) {
     super(props);
   }
- 
 
   fnFormarAmt(amt) {
     return (amt * 1.00).toLocaleString(navigator.language, { minimumFractionDigits: 0 })
@@ -164,22 +154,21 @@ class PolicyDetailView extends Component {
   }
 
   render() {
-     
     const PolicyPeriod = this.props.PolicyPeriod
 
-    return ( 
-      <div>
-<button className="newbtn" onClick={this.props.backbutton}>Back</button>
-      <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header">
-        <Typography className="policiypreviewHeaderAccord"  style={{ width: '100%'}}>Account Information</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-        <Label className="classPolicyLabel">Account Number</Label>    <br></br>
+    return (
+      <div  className = "container"> <button className="newbtn" onClick={this.props.backbutton}>Back</button>
+      {/* <button  onClick={this.props.backbutton} class="button">back</button> */}
+        <Card className="card" >
+
+          <CardBody className="policiypreviewdiv">
+            <CardTitle className="policiypreviewHeader">
+              <span> Account Information</span> <br></br>
+
+            </CardTitle>
+
+            <CardText className="cardtext">
+              <Label className="classPolicyLabel">Account Number</Label>    <br></br>
               <span>  {PolicyPeriod.Policy.Account.AccountNumber}</span> <br></br>
               <Label className="classPolicyLabel">Account Type</Label> <br></br>
               <span>
@@ -201,26 +190,22 @@ class PolicyDetailView extends Component {
 
                 {this.fnAddress(PolicyPeriod.Policy.Account.AccountHolderContact.PrimaryAddress)}
               </span>  <br></br>
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
+            </CardText>
+          </CardBody>
+        </Card>
+        <br></br>
 
+        <Table width="100%"> <tr><td width="50%">
+          <Card className="card" >
 
-<Table>
-  <tr>
-    <td>
-    
+            <CardBody className="policiypreviewdiv">
+              <CardTitle className="policiypreviewHeader">
+                <span> Policy Details</span> <br></br>
 
-<Accordion >
-<AccordionSummary
-  expandIcon={<ExpandMoreIcon />}
-  aria-controls="panel1a-content"
-  id="panel1a-header">
-  <Typography className="policiypreviewHeaderAccord"  style={{ width: '100%'}}>Policy Information</Typography>
-</AccordionSummary>
-<AccordionDetails>
-  <Typography>
-  <Label className="classPolicyLabel">Policy Number</Label>    <br></br>
+              </CardTitle>
+
+              <CardText className="cardtext">
+                <Label className="classPolicyLabel">Policy Number</Label>    <br></br>
                 <span>  {PolicyPeriod.PolicyNumber}</span> <br></br>
                 <Label className="classPolicyLabel">Product</Label> <br></br>
                 <span>
@@ -254,25 +239,23 @@ class PolicyDetailView extends Component {
                 <span>
                   {PolicyPeriod.UWCompany.DisplayName}
                 </span>  <br></br>
-  </Typography>
-</AccordionDetails>
-</Accordion>
-  
-</td>
-  
-    <td>
+              </CardText>
+            </CardBody>
+          </Card>
 
-<Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-        aria-controls="panel1a-content"
-        id="panel1a-header">
-        <Typography className="policiypreviewHeaderAccord"  style={{ width: '100%'}}>Premium Details</Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-       
-    <Label className="classPolicyLabel">Total Premium</Label>    <br></br>
+        </td>
+
+          <td width="50%">
+            <Card className="card" >
+
+              <CardBody className="policiypreviewdiv">
+                <CardTitle className="policiypreviewHeader">
+                  <span> Premium Details</span> <br></br>
+
+                </CardTitle>
+
+                <CardText className="cardtext">
+                  <Label className="classPolicyLabel">Total Premium</Label>    <br></br>
                   <span>  $ {this.fnFormarAmt(PolicyPeriod.TotalPremiumRPT.slice(0, -3))}</span> <br></br>
                   <Label className="classPolicyLabel">Taxes And Surcharges</Label> <br></br>
                   <span>
@@ -285,24 +268,36 @@ class PolicyDetailView extends Component {
                     $ {this.fnFormarAmt(PolicyPeriod.TotalCostRPT.slice(0, -3))}
                   </span>
                   <br></br>
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
+                  {/* <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  */}
+                </CardText>
+              </CardBody>
+            </Card>
 
-    </td></tr>
+          </td></tr>
         </Table>
+        <Card className="card" >
 
+          <CardBody className="policiypreviewdiv">
+            <CardTitle className="policiypreviewHeader">
+              <span> Insured Details</span> <br></br>
 
-        <Accordion >
-<AccordionSummary
-  expandIcon={<ExpandMoreIcon />}
-  aria-controls="panel1a-content"
-  id="panel1a-header">
-  <Typography className="policiypreviewHeaderAccord"  style={{ width: '100%'}}> Insured Details</Typography>
-</AccordionSummary>
-<AccordionDetails>
-  <Typography>
-  {PolicyPeriod.PolicyContactRoles.Entry.length > 1 ?
+            </CardTitle>
+            <h4>Primary Insured</h4>
+            <CardText className="cardtext">
+              {PolicyPeriod.PolicyContactRoles.Entry.length > 1 ?
                 PolicyPeriod.PolicyContactRoles.Entry.map(ent => {
                   return ((ent.Subtype === "PolicyPriNamedInsured" ?
                     <div>
@@ -326,19 +321,18 @@ class PolicyDetailView extends Component {
 
                 )
               }
-               </Typography>
-</AccordionDetails>
-</Accordion>
-<Accordion >
-<AccordionSummary
-  expandIcon={<ExpandMoreIcon />}
-  aria-controls="panel1a-content"
-  id="panel1a-header">
-  <Typography className="policiypreviewHeaderAccord"  style={{ width: '100%'}}>Policy Locations</Typography>
-</AccordionSummary>
-<AccordionDetails>
-  <Typography>
-  {
+            </CardText>
+          </CardBody>
+        </Card>
+
+        <Card className="card" >
+          <CardBody className="policiypreviewdiv">
+            <CardTitle className="policiypreviewHeader">
+              <span> Policy Locations </span> <br></br>
+            </CardTitle>
+
+            <CardText className="cardtext">
+              {
                 PolicyPeriod.PolicyLocations.Entry.length > 1 ?
 
 
@@ -347,24 +341,25 @@ class PolicyDetailView extends Component {
                   :
                   <span>{PolicyPeriod.PolicyLocations.Entry.LocationNum + " . " + this.fnAddress(PolicyPeriod.PolicyLocations.Entry.AccountLocation)}</span>
               }
-   </Typography>
-</AccordionDetails>
-</Accordion>
-<Accordion >
-<AccordionSummary
-  expandIcon={<ExpandMoreIcon />}
-  aria-controls="panel1a-content"
-  id="panel1a-header">
-  <Typography className="policiypreviewHeaderAccord"  style={{ width: '100%'}}>Coverages</Typography>
-</AccordionSummary>
-<AccordionDetails>
-  <Typography>
-  {this.fnConverages(PolicyPeriod)}
-  </Typography>
-</AccordionDetails>
-</Accordion>
-</div>
-        )
+            </CardText>
+          </CardBody>
+        </Card>
+
+        <Card className="card" >
+          <CardBody className="policiypreviewdiv">
+            <CardTitle className="policiypreviewHeader">
+              <span> Coverages </span> <br></br>
+
+            </CardTitle>
+
+            <CardText className="cardtext">
+              {this.fnConverages(PolicyPeriod)}
+            </CardText>
+          </CardBody>
+        </Card>
+
+      </div>
+    )
   }
 }
 

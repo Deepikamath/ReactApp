@@ -92,10 +92,10 @@ class Header extends Component {
                             </NavItem>
 
                             <NavItem>
-                                <NavLink className="nav-link" to='/MyPolicies'><span className="fa fa-pencil"></span>Policy Summary</NavLink>
+                                <NavLink className="nav-link" to='/MyPolicies'><span className="fa fa-pencil-square-o"></span>My Policy</NavLink>
                             </NavItem>
                             {/* <NavItem>
-                                <NavLink className="nav-link" to='/NewHome'><span className="fa fa-phone fa-lg"></span>New Screen</NavLink>
+                                <NavLink className="nav-link" to='/accord'><span className="fa fa-phone fa-lg"></span>accord</NavLink>
                             </NavItem> */}
                             </Nav>
                              

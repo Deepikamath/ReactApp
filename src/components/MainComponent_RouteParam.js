@@ -33,7 +33,7 @@ import ReactTableExp from './ReactTableExpComponent';
 import MaterialUI from './materialUIComponent'
 import MyPolicies from './MyPoliciesComponent';
 import NewHome from './NewHomeComponent';
-
+import accord from './accordComponent'
 
 class Main extends Component {
 
@@ -131,8 +131,8 @@ return(
             <Route exact path="/NewHome" component={NewHome}></Route>
              
              <Route exact path="/MyPolicies" component={MyPolicies}></Route>
-            {/* <Route exact path="/homeowners" component={HomeOwners}></Route>
-            <Route exact path="/button" component={Buttoncomp}></Route>
+             <Route exact path="/accord" component={accord}></Route>
+            {/*<Route exact path="/button" component={Buttoncomp}></Route>
             <Route exact path="/NextPreviousButton" component={NextPreviousButton}></Route> */}
             <Redirect to="/home" />
         </Switch>

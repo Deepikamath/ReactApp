@@ -1,4 +1,5 @@
 import OPTIONNEWUSER from './options';
+import OPTIONS from './options'
 export const SCREENS = [
     {
     id: 0,
@@ -28,27 +29,8 @@ export const SCREENS = [
         }
      ]
      }  ,
-    {
+     {
         id: 1,
-        HeaderQuestion: 'Are you insuring the property for the first time or just thinking of switching insurers?',
-        
-        fields : [
-     
-            {
-                id: 0,
-                name: 'Insurer',
-                AnswerType:'Radio',
-                optionSet:OPTIONNEWUSER,
-                Label : 'Insurer'
-            }   
-        
-        ]
-
-    },
-    
-   
-    {
-        id: 2,
         HeaderQuestion: ' Glad to meet you ! Where are you located?',
         
         fields : [
@@ -64,8 +46,28 @@ export const SCREENS = [
         ]
 
     },
+    // {
+    //     id: 2,
+    //     HeaderQuestion: 'Are you insuring the property for the first time or just thinking of switching insurers?',
+        
+    //     fields : [
+     
+    //         {
+    //             id: 0,
+    //             name: 'Insurer',
+    //             AnswerType:'Radio',
+    //             optionSet:OPTIONS,
+    //             Label : 'Insurer'
+    //         }   
+        
+    //     ]
+
+    // },
+    
+   
+   
     {
-        id: 3,
+        id: 2,
         HeaderQuestion: 'What is the Email Address we can contact you at?',
         
         fields : [
@@ -82,7 +84,7 @@ export const SCREENS = [
 
     },
     {
-        id: 4,
+        id: 3,
         HeaderQuestion: 'What is the Date of your Birth?',        
         fields : [     
             {
@@ -112,7 +114,7 @@ export const SCREENS = [
 
     },
     {
-        id: 5,
+        id: 4,
         HeaderQuestion: 'At what number can we can contact you?',        
         fields : [     
             {
